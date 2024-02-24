@@ -8,8 +8,9 @@ import TotalMealInput from "./Components/InputControls/TotalMealInput";
 import MealsList from "./Components/MealsList/MealsList";
 import Modal from "./Components/Modal/Modal";
 import MealsFilter from "./Components/MealsFilter/MealsFilter";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+// import Calendar from "react-calendar";
+// import CalendarComponent from './Components/CalendarComponent/Calendar';
+// import "react-calendar/dist/Calendar.css";
 
 const App = () => {
   const [meals, setMeals] = useState([]);
@@ -18,7 +19,7 @@ const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("");
   const [date, setDate] = useState(new Date());
-  const [dailyIntake, setDailyIntake] = useState({});
+  // const [dailyIntake, setDailyIntake] = useState({});
 
   const addMealsHandler = () => {
     const oldMeals = meals ? [...meals] : [];
@@ -79,19 +80,19 @@ const App = () => {
     setMeals(localStorageMeals);
   }, [setMeals]);
 
-  const handleDateChange = (newDate) => {
-    setDate(newDate);
-  };
+  // const handleDateChange = (newDate) => {
+  //   setDate(newDate);
+  // };
 
-  useEffect(() => {
-    const dateKey = date.toDateString();
-    const filteredMeals = meals.filter((meal) => {
-      const mealDate = new Date(meal.date).toDateString();
-      return mealDate === dateKey;
-    });
-    const intake = filteredMeals.reduce((acc, meal) => acc + meal.calories, 0);
-    setDailyIntake({ [dateKey]: intake });
-  }, [date, meals]);
+  // useEffect(() => {
+  //   const dateKey = date.toDateString();
+  //   const filteredMeals = meals.filter((meal) => {
+  //     const mealDate = new Date(meal.date).toDateString();
+  //     return mealDate === dateKey;
+  //   });
+  //   const intake = filteredMeals.reduce((acc, meal) => acc + meal.calories, 0);
+  //   setDailyIntake({ [dateKey]: intake });
+  // }, [date, meals]);
 
   return (
     <div className="App">
@@ -115,11 +116,11 @@ const App = () => {
         <MealsList meals={meals} deleteMealHandler={deleteMealHandler} />
       </div>
 
-      {/* Calendar component */}
+      {/* Calendar component
       <div>
         <h2>Calendar</h2>
-        <Calendar onChange={setDate} value={date} />
-      </div>
+        <CalendarComponent date={date} handleDateChange={handleDateChange} />
+      </div> */}
     </div>
   );
 };
