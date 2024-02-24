@@ -7,7 +7,7 @@ const MealsFilter = ({ setSelectedFilter, selectedFilter }) => {
         defaultValue={selectedFilter}
         onChange={(e) => setSelectedFilter(e.target.value)}
       >
-        <option value=""></option>
+        <option value=" "></option>
         <option value="Ascending">Ascending</option>
         <option value="Descending">Descending</option>
       </select>

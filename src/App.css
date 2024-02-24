@@ -23,14 +23,14 @@ span {
 
 .app__controls__counter {
   position: fixed;
-  top: 60px;
-  left: 30px;
+  top: 40px;
+  left: 10px;
 }
 
 .app__controls__delete {
   position: fixed;
   top: 80px;
-  right: 30px;
+  right: 50px;
 }
 
 .btn__delete__all {
