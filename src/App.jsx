@@ -9,7 +9,7 @@ import MealsList from "./Components/MealsList/MealsList";
 import Modal from "./Components/Modal/Modal";
 import MealsFilter from "./Components/MealsFilter/MealsFilter";
 // import Calendar from "react-calendar";
-// import CalendarComponent from './Components/CalendarComponent/Calendar';
+import CalendarComponent from './Components/CalendarComponent/CalendarComponent';
 // import "react-calendar/dist/Calendar.css";
 
 const App = () => {
@@ -116,11 +116,11 @@ const App = () => {
         <MealsList meals={meals} deleteMealHandler={deleteMealHandler} />
       </div>
 
-      {/* Calendar component
+      
       <div>
         <h2>Calendar</h2>
-        <CalendarComponent date={date} handleDateChange={handleDateChange} />
-      </div> */}
+        <CalendarComponent date={date} handleDateChange={setDate} />
+      </div>
     </div>
   );
 };
